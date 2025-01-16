@@ -14,4 +14,8 @@ public class Product {
     private String sellingPrice;
     private String costPrice;
     private String image;
+    private String createdOn;
+    private String createdBy;
+    private String modifiedOn;
+    private String modifiedBy;
 }
