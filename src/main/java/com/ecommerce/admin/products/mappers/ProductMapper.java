@@ -23,8 +23,6 @@ public class ProductMapper {
         product.setImage(productRequest.getImage());
         product.setStatus(Constants.Y);
         product.setCreatedBy("ROOT");
-        product.setModifiedBy("ROOT");
-        product.setCreatedOn(new Date());
         product.setModifiedOn(new Date());
         return product;
     }

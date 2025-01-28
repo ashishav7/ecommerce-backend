@@ -8,4 +8,5 @@ public interface Constants {
     String FAIL="400";
 
     String Y = "Y";
+    String N = "N";
 }
