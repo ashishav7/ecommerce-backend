@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProductController {
 
     @PostMapping("/add")
-    private void addProduct(){}
+    private String addProduct(){
+        return "Product Added";
+    }
 
     @PostMapping("/")
     private void getProducts(){}

@@ -6,4 +6,6 @@ public interface Constants {
     String NO = "NO";
     String SUCCESS="200";
     String FAIL="400";
+
+    String Y = "Y";
 }
