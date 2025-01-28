@@ -9,6 +9,7 @@ public class AddProductRequest {
     private String name;
     private String description;
     private String category;
+    private String subCategory;
     private String quantity;
     private String sellingPrice;
     private String costPrice;

@@ -12,5 +12,6 @@ public class AddProductResponse extends BaseResponse {
     private String id;
     private String name;
     private String category;
+    private String subCategory;
     private String quantity;
 }

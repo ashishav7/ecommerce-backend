@@ -29,6 +29,9 @@ public class Product {
     @Column(name = "category")
     private String category;
 
+    @Column(name = "sub_category")
+    private String subCategory;
+
     @Column(name = "quantity")
     private Long quantity;
 

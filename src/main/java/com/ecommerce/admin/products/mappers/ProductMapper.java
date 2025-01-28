@@ -17,6 +17,7 @@ public class ProductMapper {
         product.setName(productRequest.getName());
         product.setDescription(productRequest.getDescription());
         product.setCategory(productRequest.getCategory());
+        product.setSubCategory(productRequest.getSubCategory());
         product.setCostPrice(Long.parseLong(productRequest.getCostPrice()));
         product.setSellingPrice(Long.parseLong(productRequest.getSellingPrice()));
         product.setQuantity(Long.parseLong(productRequest.getQuantity()));
@@ -35,6 +36,7 @@ public class ProductMapper {
                 .id(product.getId())
                 .name(product.getName())
                 .category(product.getCategory())
+                .subCategory(product.getSubCategory())
                 .quantity(product.getQuantity().toString())
                 .build();
     }
