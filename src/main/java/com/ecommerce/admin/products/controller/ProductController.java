@@ -7,6 +7,7 @@ import com.ecommerce.admin.products.service.ProductService;
 import com.ecommerce.common.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,19 +24,20 @@ public class ProductController {
     }
 
     @PostMapping("/add")
-    private AddProductResponse addProduct(@RequestBody AddProductRequest addProductRequest){
+    private ResponseEntity<AddProductResponse> addProduct(@RequestBody AddProductRequest addProductRequest){
         AddProductResponse response = ProductMapper.toResponse(null);
         try {
             response = ProductMapper.toResponse(productService.addProduct(addProductRequest));
             response.setStatus(String.valueOf(HttpStatus.OK));
             response.setMessage("Successfully Created Product");
             response.setMessageCode(Constants.SUCCESS);
+            return ResponseEntity.ok(response);
         }catch (Exception e){
             response.setMessageCode(Constants.FAIL);
             response.setMessage(e.getMessage());
             response.setStatus(HttpStatus.BAD_REQUEST.toString());
+            return ResponseEntity.badRequest().body(response);
         }
-        return response;
     }
 
     @PostMapping("/")
