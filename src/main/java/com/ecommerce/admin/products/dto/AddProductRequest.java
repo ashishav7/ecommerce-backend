@@ -1,7 +1,10 @@
 package com.ecommerce.admin.products.dto;
 
-import com.ecommerce.admin.products.model.Product;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class AddProductRequest {
     private String name;
     private String description;

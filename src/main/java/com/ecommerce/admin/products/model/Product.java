@@ -6,18 +6,18 @@ import org.hibernate.annotations.GenericGenerator;
 
 import java.util.Date;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@ToString
 @Entity
 @Table(name = "Products")
+@Getter
+@Setter
 public class Product {
 
     @Id
     @Column(name = "product_id")
     @GeneratedValue(generator = "custom-key-generator")
-    @GenericGenerator(name = "custom-key-generator", strategy = "com.ecommerce.utility.generator.IdGenerator", parameters = {@org.hibernate.annotations.Parameter(name = "prefix", value = "PROD"), @org.hibernate.annotations.Parameter(name = "paddingLength", value = "10")})
+    @GenericGenerator(name = "custom-key-generator", strategy = "com.ecommerce.utility.generator.IdGenerator",
+            parameters = {@org.hibernate.annotations.Parameter(name = "prefix", value = "PROD"),
+                    @org.hibernate.annotations.Parameter(name = "paddingLength", value = "10")})
     private String id;
 
     @Column(name = "product_name")
@@ -55,4 +55,5 @@ public class Product {
 
     @Column(name = "status")
     private String status;
+
 }
